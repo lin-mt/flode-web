@@ -1,0 +1,17 @@
+.floating-text-format-popup {
+  display: flex;
+  gap: 5px;
+  background: #fff;
+  padding: 5px;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transition: opacity 0.5s;
+  will-change: transform;
+}
+

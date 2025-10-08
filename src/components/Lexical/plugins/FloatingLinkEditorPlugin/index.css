@@ -1,0 +1,14 @@
+.link-editor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  max-width: 366px;
+  width: 100%;
+  opacity: 0;
+  background-color: #fff;
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  transition: opacity 0.5s;
+  will-change: transform;
+}

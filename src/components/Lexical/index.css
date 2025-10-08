@@ -1,0 +1,59 @@
+.lucide {
+  stroke-width: 1.6;
+  width: 20px;
+  height: 20px;
+}
+
+.editor-scroller {
+  min-height: 300px;
+  display: flex;
+  position: relative;
+  outline: 0;
+  z-index: 0;
+  overflow: auto;
+}
+
+.editor {
+  flex: auto;
+  position: relative;
+  resize: vertical;
+  z-index: -1;
+}
+
+.content-editable {
+  border: 0;
+  font-size: 15px;
+  display: block;
+  position: relative;
+  outline: 0;
+  padding: 8px 26px 25px;
+  min-height: 300px;
+}
+
+@media (max-width: 1025px) {
+  .content-editable {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.content-editable-placeholder {
+  font-size: 15px;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 8px;
+  left: 28px;
+  right: 28px;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+  pointer-events: none;
+}
+
+@media (max-width: 1025px) {
+  .content-editable-placeholder {
+    left: 8px;
+    right: 8px;
+  }
+}
