@@ -7,7 +7,7 @@ export async function updateApiDocs(
   body: API.UpdateApiDocs,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/apiDocs`, {
+  return request<string>(`/flodeApi/apiDocs`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addApiDocs(
   body: API.SaveApiDocs,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/apiDocs`, {
+  return request<string>(`/flodeApi/apiDocs`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteApiDocs(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/apiDocs/${param0}`, {
+  return request<any>(`/flodeApi/apiDocs/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function getApiDocsDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.ApiDocsDetail>(`/apiDocs/detail/${param0}`, {
+  return request<API.ApiDocsDetail>(`/flodeApi/apiDocs/detail/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),

@@ -7,7 +7,7 @@ export async function updateApiDocsGroup(
   body: API.UpdateApiDocsGroup,
   options?: { [key: string]: any }
 ) {
-  return request<API.ApiDocsGroupVO>(`/apiDocsGroup`, {
+  return request<API.ApiDocsGroupVO>(`/flodeApi/apiDocsGroup`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addApiDocsGroup(
   body: API.SaveApiDocsGroup,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/apiDocsGroup`, {
+  return request<string>(`/flodeApi/apiDocsGroup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteApiDocsGroup(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/apiDocsGroup/${param0}`, {
+  return request<any>(`/flodeApi/apiDocsGroup/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function treeApiDocsGroupDetail(
   options?: { [key: string]: any }
 ) {
   return request<API.ApiDocsGroupDetail[]>(
-    `/apiDocsGroup/treeApiDocsGroupDetail`,
+    `/flodeApi/apiDocsGroup/treeApiDocsGroupDetail`,
     {
       method: "GET",
       params: {

@@ -7,7 +7,7 @@ export async function updateTemplate(
   body: API.UpdateTemplate,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/template`, {
+  return request<string>(`/flodeApi/template`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addTemplate(
   body: API.AddTemplate,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/template`, {
+  return request<string>(`/flodeApi/template`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function getTemplateDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.TemplateDetail>(`/api/template/${param0}`, {
+  return request<API.TemplateDetail>(`/flodeApi/template/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function deleteTemplate(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/template/${param0}`, {
+  return request<any>(`/flodeApi/template/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -66,7 +66,7 @@ export async function listTemplate(
   params: API.listTemplateParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.SimpleTemplate[]>(`/api/template/list`, {
+  return request<API.SimpleTemplate[]>(`/flodeApi/template/list`, {
     method: "GET",
     params: {
       ...params,
@@ -81,7 +81,7 @@ export async function pageTemplate(
   params: API.pageTemplateParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageTemplateVO>(`/api/template/page`, {
+  return request<API.PageTemplateVO>(`/flodeApi/template/page`, {
     method: "GET",
     params: {
       ...params,

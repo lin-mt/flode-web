@@ -7,7 +7,7 @@ export async function updateVersion(
   body: API.UpdateVersion,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/version`, {
+  return request<string>(`/flodeApi/version`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addVersion(
   body: API.AddVersion,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/version`, {
+  return request<string>(`/flodeApi/version`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function getVersionDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.VersionDetail>(`/api/version/${param0}`, {
+  return request<API.VersionDetail>(`/flodeApi/version/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function deleteVersion(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/version/${param0}`, {
+  return request<any>(`/flodeApi/version/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -66,11 +66,14 @@ export async function treeVersionDetail(
   params: API.treeVersionDetailParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.TreeVersionDetail[]>(`/api/version/treeVersionDetail`, {
-    method: "GET",
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
+  return request<API.TreeVersionDetail[]>(
+    `/flodeApi/version/treeVersionDetail`,
+    {
+      method: "GET",
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    }
+  );
 }

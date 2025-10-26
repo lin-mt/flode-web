@@ -7,7 +7,7 @@ export async function updateProject(
   body: API.UpdateProject,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/project`, {
+  return request<string>(`/flodeApi/project`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addProject(
   body: API.AddProject,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/project`, {
+  return request<string>(`/flodeApi/project`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function getProjectDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.ProjectDetail>(`/api/project/${param0}`, {
+  return request<API.ProjectDetail>(`/flodeApi/project/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function deleteProject(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/project/${param0}`, {
+  return request<any>(`/flodeApi/project/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -62,10 +62,13 @@ export async function deleteProject(
 
 /** 获取当前用户的项目 GET /project/listCurrentUserProject */
 export async function listCurrentUserProject(options?: { [key: string]: any }) {
-  return request<API.UserProject[]>(`/api/project/listCurrentUserProject`, {
-    method: "GET",
-    ...(options || {}),
-  });
+  return request<API.UserProject[]>(
+    `/flodeApi/project/listCurrentUserProject`,
+    {
+      method: "GET",
+      ...(options || {}),
+    }
+  );
 }
 
 /** 分页查询项目信息 GET /project/page */
@@ -74,7 +77,7 @@ export async function pageProject(
   params: API.pageProjectParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageProjectVO>(`/api/project/page`, {
+  return request<API.PageProjectVO>(`/flodeApi/project/page`, {
     method: "GET",
     params: {
       ...params,
@@ -90,7 +93,7 @@ export async function updateQsConfig(
   body: API.SaveQsConfig,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/project/qsConfig`, {
+  return request<any>(`/flodeApi/project/qsConfig`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -105,7 +108,7 @@ export async function updateSwaggerSync(
   body: API.SaveSwaggerSync,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/project/swaggerSync`, {
+  return request<any>(`/flodeApi/project/swaggerSync`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

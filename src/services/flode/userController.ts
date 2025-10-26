@@ -7,7 +7,7 @@ export async function updateUser(
   body: API.UpdateUser,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/user`, {
+  return request<string>(`/flodeApi/user`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export async function deleteUser(
   params: API.deleteUserParams,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/user`, {
+  return request<any>(`/flodeApi/user`, {
     method: "DELETE",
     params: {
       ...params,
@@ -34,7 +34,7 @@ export async function deleteUser(
 
 /** 获取当前用户信息 GET /user/current */
 export async function currentUser(options?: { [key: string]: any }) {
-  return request<API.CurrentUser>(`/api/user/current`, {
+  return request<API.CurrentUser>(`/flodeApi/user/current`, {
     method: "GET",
     ...(options || {}),
   });
@@ -46,7 +46,7 @@ export async function listRoles(
   params: API.listRolesParams,
   options?: { [key: string]: any }
 ) {
-  return request<string[]>(`/api/user/listRoles`, {
+  return request<string[]>(`/flodeApi/user/listRoles`, {
     method: "GET",
     params: {
       ...params,
@@ -61,7 +61,7 @@ export async function listUser(
   params: API.listUserParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.SimpleUser[]>(`/api/user/listUser`, {
+  return request<API.SimpleUser[]>(`/flodeApi/user/listUser`, {
     method: "GET",
     params: {
       ...params,
@@ -75,7 +75,7 @@ export async function login(
   body: API.UserDTO,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/user/login`, {
+  return request<string>(`/flodeApi/user/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export async function pageUser(
   params: API.pageUserParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageUserVO>(`/api/user/page`, {
+  return request<API.PageUserVO>(`/flodeApi/user/page`, {
     method: "GET",
     params: {
       ...params,
@@ -107,7 +107,7 @@ export async function registration(
   body: API.UserDTO,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/user/registration`, {
+  return request<string>(`/flodeApi/user/registration`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -122,7 +122,7 @@ export async function updateRoles(
   body: API.UserRoles,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/user/updateRoles`, {
+  return request<any>(`/flodeApi/user/updateRoles`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

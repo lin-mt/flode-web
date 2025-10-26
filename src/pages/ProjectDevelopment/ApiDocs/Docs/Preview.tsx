@@ -2,7 +2,12 @@ import { LexicalViewer } from "@/components";
 import ApiDocsContent from "@/pages/ProjectDevelopment/ApiDocs/ApiDocsContent";
 import SchemaTable from "@/pages/ProjectDevelopment/ApiDocs/Docs/SchemaTable";
 import SubItemTitle from "@/pages/ProjectDevelopment/ApiDocs/SubItemTitle";
-import { apiDocsStateTag, getOrigin, methodTag, queryParamJsonSchema } from "@/util/Utils";
+import {
+  apiDocsStateTag,
+  getOrigin,
+  methodTag,
+  queryParamJsonSchema,
+} from "@/util/Utils";
 import {
   Descriptions,
   DescriptionsProps,
@@ -95,7 +100,9 @@ function Preview(props: { apiDocsDetail: API.ApiDocsDetail }) {
         span: 3,
         children: (
           <>
-            <Typography.Text copyable>{`${getOrigin()}/api/mock/${apiDocsDetail.id}`}</Typography.Text>
+            <Typography.Text copyable>{`${getOrigin()}/api/mock/${
+              apiDocsDetail.id
+            }`}</Typography.Text>
           </>
         ),
       },

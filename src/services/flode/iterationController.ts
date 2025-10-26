@@ -7,7 +7,7 @@ export async function updateIteration(
   body: API.UpdateIteration,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/iteration`, {
+  return request<string>(`/flodeApi/iteration`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addIteration(
   body: API.AddIteration,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/iteration`, {
+  return request<string>(`/flodeApi/iteration`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function getIterationDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.IterationDetail>(`/api/iteration/${param0}`, {
+  return request<API.IterationDetail>(`/flodeApi/iteration/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function deleteIteration(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/iteration/${param0}`, {
+  return request<any>(`/flodeApi/iteration/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -65,7 +65,7 @@ export async function updateIterationStatus(
   body: API.UpdateIterationStatus,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/iteration/status`, {
+  return request<any>(`/flodeApi/iteration/status`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

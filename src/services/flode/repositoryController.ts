@@ -7,7 +7,7 @@ export async function updateRepository(
   body: API.UpdateRepository,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/repository`, {
+  return request<string>(`/flodeApi/repository`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addRepository(
   body: API.AddRepository,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/repository`, {
+  return request<string>(`/flodeApi/repository`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteRepository(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/repository/${param0}`, {
+  return request<any>(`/flodeApi/repository/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -52,7 +52,7 @@ export async function listRepository(
   params: API.listRepositoryParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.RepositoryVO[]>(`/api/repository/list`, {
+  return request<API.RepositoryVO[]>(`/flodeApi/repository/list`, {
     method: "GET",
     params: {
       ...params,
@@ -67,7 +67,7 @@ export async function pageRepository(
   params: API.pageRepositoryParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageRepositoryVO>(`/api/repository/page`, {
+  return request<API.PageRepositoryVO>(`/flodeApi/repository/page`, {
     method: "GET",
     params: {
       ...params,

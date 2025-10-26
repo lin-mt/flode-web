@@ -7,7 +7,7 @@ export async function updateRole(
   body: API.UpdateRole,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/role`, {
+  return request<string>(`/flodeApi/role`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addRole(
   body: API.AddRole,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/role`, {
+  return request<string>(`/flodeApi/role`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export async function deleteRole(
   params: API.deleteRoleParams,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/role`, {
+  return request<any>(`/flodeApi/role`, {
     method: "DELETE",
     params: {
       ...params,
@@ -53,7 +53,7 @@ export async function listPermission(
   params: API.listPermissionParams,
   options?: { [key: string]: any }
 ) {
-  return request<string[]>(`/api/role/listPermission`, {
+  return request<string[]>(`/flodeApi/role/listPermission`, {
     method: "GET",
     params: {
       ...params,
@@ -68,7 +68,7 @@ export async function pageRole(
   params: API.pageRoleParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageRoleVO>(`/api/role/page`, {
+  return request<API.PageRoleVO>(`/flodeApi/role/page`, {
     method: "GET",
     params: {
       ...params,
@@ -81,7 +81,7 @@ export async function pageRole(
 
 /** 查询所有角色信息，返回树形结构 GET /role/treeSelect */
 export async function treeRoles(options?: { [key: string]: any }) {
-  return request<API.TreeRole[]>(`/api/role/treeSelect`, {
+  return request<API.TreeRole[]>(`/flodeApi/role/treeSelect`, {
     method: "GET",
     ...(options || {}),
   });
@@ -92,7 +92,7 @@ export async function updatePermissions(
   body: API.RolePermissions,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/role/updatePermissions`, {
+  return request<any>(`/flodeApi/role/updatePermissions`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

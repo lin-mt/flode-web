@@ -7,7 +7,7 @@ export async function updatePermission(
   body: API.UpdatePermission,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/permission`, {
+  return request<string>(`/flodeApi/permission`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addPermission(
   body: API.AddPermission,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/permission`, {
+  return request<string>(`/flodeApi/permission`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export async function deletePermission(
   params: API.deletePermissionParams,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/permission`, {
+  return request<any>(`/flodeApi/permission`, {
     method: "DELETE",
     params: {
       ...params,
@@ -53,7 +53,7 @@ export async function pagePermission(
   params: API.pagePermissionParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PagePermissionVO>(`/api/permission/page`, {
+  return request<API.PagePermissionVO>(`/flodeApi/permission/page`, {
     method: "GET",
     params: {
       ...params,
@@ -66,7 +66,7 @@ export async function pagePermission(
 
 /** 查询所有权限信息，返回树形结构 GET /permission/treeSelect */
 export async function treePermission(options?: { [key: string]: any }) {
-  return request<API.TreePermission[]>(`/api/permission/treeSelect`, {
+  return request<API.TreePermission[]>(`/flodeApi/permission/treeSelect`, {
     method: "GET",
     ...(options || {}),
   });

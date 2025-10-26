@@ -7,7 +7,7 @@ export async function updateTask(
   body: API.UpdateTask,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/task`, {
+  return request<string>(`/flodeApi/task`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addTask(
   body: API.AddTask,
   options?: { [key: string]: any }
 ) {
-  return request<API.TaskVO>(`/api/task`, {
+  return request<API.TaskVO>(`/flodeApi/task`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteTask(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/task/${param0}`, {
+  return request<any>(`/flodeApi/task/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function moveTask(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/task/moveTask/${param0}`, {
+  return request<any>(`/flodeApi/task/moveTask/${param0}`, {
     method: "PUT",
     params: {
       ...queryParams,

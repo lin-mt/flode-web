@@ -7,7 +7,7 @@ export async function updateRequirement(
   body: API.UpdateRequirement,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/requirement`, {
+  return request<string>(`/flodeApi/requirement`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addRequirement(
   body: API.AddRequirement,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/requirement`, {
+  return request<string>(`/flodeApi/requirement`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteRequirement(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/requirement/${param0}`, {
+  return request<any>(`/flodeApi/requirement/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -52,7 +52,7 @@ export async function listRequirement(
   params: API.listRequirementParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.RequirementVO[]>(`/api/requirement/list`, {
+  return request<API.RequirementVO[]>(`/flodeApi/requirement/list`, {
     method: "GET",
     params: {
       ...params,
@@ -69,13 +69,16 @@ export async function listRequirementByIterationId(
   params: API.listRequirementByIterationIdParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.RequirementVO[]>(`/api/requirement/listByIterationId`, {
-    method: "GET",
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
+  return request<API.RequirementVO[]>(
+    `/flodeApi/requirement/listByIterationId`,
+    {
+      method: "GET",
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    }
+  );
 }
 
 /** 规划需求 PUT /requirement/planning */
@@ -83,7 +86,7 @@ export async function planningRequirement(
   body: API.PlanningRequirement,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/requirement/planning`, {
+  return request<any>(`/flodeApi/requirement/planning`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -99,13 +102,16 @@ export async function requirementTask(
   params: API.requirementTaskParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.RequirementTask[]>(`/api/requirement/requirementTask`, {
-    method: "GET",
-    params: {
-      ...params,
-      listRequirementTask: undefined,
-      ...params["listRequirementTask"],
-    },
-    ...(options || {}),
-  });
+  return request<API.RequirementTask[]>(
+    `/flodeApi/requirement/requirementTask`,
+    {
+      method: "GET",
+      params: {
+        ...params,
+        listRequirementTask: undefined,
+        ...params["listRequirementTask"],
+      },
+      ...(options || {}),
+    }
+  );
 }

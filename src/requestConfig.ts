@@ -20,8 +20,8 @@ interface ResponseStructure {
   messageType?: MessageType;
 }
 
-const loginUrl = "/api/user/login";
-export const PROXY_PREFIX = "/api/apiDebugProxy";
+const loginUrl = "/flodeApi/user/login";
+export const PROXY_PREFIX = "/flodeApi/apiDebugProxy";
 
 /**
  * 拦截器

@@ -7,7 +7,7 @@ export async function updateProjectGroup(
   body: API.UpdateProjectGroup,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/projectGroup`, {
+  return request<string>(`/flodeApi/projectGroup`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function addProjectGroup(
   body: API.AddProjectGroup,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/projectGroup`, {
+  return request<string>(`/flodeApi/projectGroup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function getProjectGroupDetail(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<API.ProjectGroupDetail>(`/api/projectGroup/${param0}`, {
+  return request<API.ProjectGroupDetail>(`/flodeApi/projectGroup/${param0}`, {
     method: "GET",
     params: { ...queryParams },
     ...(options || {}),
@@ -53,7 +53,7 @@ export async function deleteProjectGroup(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/projectGroup/${param0}`, {
+  return request<any>(`/flodeApi/projectGroup/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -65,7 +65,7 @@ export async function listCurrentUserProjectGroup(options?: {
   [key: string]: any;
 }) {
   return request<API.SimpleProjectGroup[]>(
-    `/api/projectGroup/listCurrentUserProjectGroup`,
+    `/flodeApi/projectGroup/listCurrentUserProjectGroup`,
     {
       method: "GET",
       ...(options || {}),
@@ -79,13 +79,16 @@ export async function listProjectGroupUser(
   params: API.listProjectGroupUserParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.SimpleUser[]>(`/api/projectGroup/listProjectGroupUser`, {
-    method: "GET",
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
+  return request<API.SimpleUser[]>(
+    `/flodeApi/projectGroup/listProjectGroupUser`,
+    {
+      method: "GET",
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    }
+  );
 }
 
 /** 更新项目组成员 PUT /projectGroup/members */
@@ -93,7 +96,7 @@ export async function updateProjectGroupMembers(
   body: API.ProjectGroupMember,
   options?: { [key: string]: any }
 ) {
-  return request<any>(`/api/projectGroup/members`, {
+  return request<any>(`/flodeApi/projectGroup/members`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -109,7 +112,7 @@ export async function pageProjectGroup(
   params: API.pageProjectGroupParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.PageProjectGroupVO>(`/api/projectGroup/page`, {
+  return request<API.PageProjectGroupVO>(`/flodeApi/projectGroup/page`, {
     method: "GET",
     params: {
       ...params,

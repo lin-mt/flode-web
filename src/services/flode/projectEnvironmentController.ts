@@ -7,7 +7,7 @@ export async function updateProjectEnvironment(
   body: API.UpdateProjectEnvironment,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/projectEnvironment`, {
+  return request<string>(`/flodeApi/projectEnvironment`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export async function saveProjectEnvironment(
   body: API.SaveProjectEnvironment,
   options?: { [key: string]: any }
 ) {
-  return request<string>(`/api/projectEnvironment`, {
+  return request<string>(`/flodeApi/projectEnvironment`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export async function deleteProjectEnvironment(
   options?: { [key: string]: any }
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/projectEnvironment/${param0}`, {
+  return request<any>(`/flodeApi/projectEnvironment/${param0}`, {
     method: "DELETE",
     params: { ...queryParams },
     ...(options || {}),
@@ -52,11 +52,14 @@ export async function listProjectEnvironment(
   params: API.listProjectEnvironmentParams,
   options?: { [key: string]: any }
 ) {
-  return request<API.ProjectEnvironmentVO[]>(`/api/projectEnvironment/list`, {
-    method: "GET",
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
+  return request<API.ProjectEnvironmentVO[]>(
+    `/flodeApi/projectEnvironment/list`,
+    {
+      method: "GET",
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    }
+  );
 }
